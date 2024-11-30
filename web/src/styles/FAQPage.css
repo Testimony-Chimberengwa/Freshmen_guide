@@ -1,0 +1,106 @@
+/* General Layout */
+.faq-page {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; /* Start items from the top */
+    min-height: 100vh; /* Ensure the page takes up full height */
+    text-align: center;
+  }
+  
+  /* Heading */
+  h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  /* FAQ List */
+  .faq-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 30px; /* Add sufficient space between cards */
+    justify-items: center;
+    margin-top: 20px;
+    width: 100%; /* Ensure the grid spans the full container width */
+    max-width: 1200px; /* Limit the grid's maximum width */
+  }
+  
+  /* FAQ Card */
+  .faq-card {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 15px;
+    width: 100%;
+    max-width: 300px; /* Prevent cards from becoming too wide */
+    cursor: pointer;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #fff; /* Ensure cards have a distinct background */
+    position: relative; /* Ensure normal stacking for non-expanded cards */
+  }
+  
+  .faq-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .faq-card i {
+    font-size: 24px;
+    color: #007bff;
+    margin-bottom: 10px;
+  }
+  
+  .faq-card p {
+    margin: 5px 0;
+    font-size: 16px;
+    color: #333;
+  }
+  
+  /* Expanded FAQ Card */
+  .faq-card.expanded {
+    position: absolute; /* Remove the card from the document flow */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%) scale(1.1); /* Center and enlarge */
+    max-width: 500px; /* Larger width for expanded view */
+    z-index: 10; /* Bring the expanded card to the front */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* More prominent shadow */
+    background-color: #fff; /* Ensure it's visually distinct */
+    padding: 20px; /* Add extra padding for the expanded view */
+  }
+  
+  /* Expanded Content Styling */
+  .faq-card.expanded p:last-child {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #555;
+  }
+  
+  /* Back Button */
+  .back-btn {
+    margin-top: 20px;
+    padding: 10px 15px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .back-btn:hover {
+    background-color: #0056b3;
+  }
+  
+  /* FAQ Card (no answer available) */
+  .faq-card p:last-child:empty {
+    font-style: italic;
+    color: #999;
+  }
+  
