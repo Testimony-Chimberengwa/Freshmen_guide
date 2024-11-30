@@ -1,0 +1,47 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+  }
+  
+  .help-page {
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .help-header {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    position: sticky;
+    top: 0;
+  }
+  
+  .back-button {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  
+  .help-content {
+    margin-top: 50px;
+  }
+  
+  .exit-btn {
+    margin-top: 20px;
+    background-color: #d9534f;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .exit-btn:hover {
+    background-color: #c9302c;
+  }
+  
