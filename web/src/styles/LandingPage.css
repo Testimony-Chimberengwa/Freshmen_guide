@@ -1,0 +1,215 @@
+/* General Styling */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+  overflow-x: hidden; /* Prevents horizontal scroll from animations */
+  position: relative;
+}
+
+/* Blurred Background Image */
+.background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../assets/pic.jpg'); /* Path to your image */
+  background-size: cover;
+  background-position: center;
+  filter: blur(8px); /* Apply blur effect */
+  z-index: -1; /* Ensure it stays behind content */
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  animation: slideInDown 1s ease;
+  position: relative;
+  z-index: 1; /* Keeps it above the background image */
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  animation: fadeIn 2s ease-in;
+}
+
+.hamburger-menu {
+  cursor: pointer;
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+  position: absolute;
+  top: 60px;
+  right: 20px;
+  background-color: #3b4ef5;
+  border: 1px solid #ddd;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  z-index: 1000;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.dropdown-menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 10px 0;
+}
+
+.dropdown-menu ul li {
+  padding: 10px 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.dropdown-menu ul li:hover {
+  background-color: #f0f0f0;
+  transform: translateX(10px);
+}
+
+/* Main Content */
+.content {
+  text-align: center;
+  margin-top: 100px;
+  animation: slideInUp 1.5s ease;
+  position: relative;
+  z-index: 0.5; /* Keeps it above the background image */
+}
+
+.get-started-btn {
+  background-color: #007bff;
+  color: white;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-top: 150px;
+  animation: pulse 2s infinite;
+}
+
+.get-started-btn:hover {
+  background-color: #0056b3;
+  transform: scale(1.1);
+}
+
+/* Calendar of Events */
+.calendar-of-events {
+  margin-top: 50px;
+  text-align: center;
+  position: relative;
+  z-index: 1; /* Keeps it above the background image */
+}
+
+.calendar-of-events h2 {
+  font-size: 1.8rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.calendar-of-events hr {
+  border: none;
+  height: 2px;
+  background-color: #ddd;
+  margin: 10px auto 20px;
+  width: 50%;
+}
+
+.event-marquee {
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+}
+
+.event-cards {
+  display: inline-block;
+  animation: scroll 45s linear infinite;
+}
+
+.event-card {
+  display: inline-block;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  margin: 0 10px;
+  padding: 10px;
+  width: 200px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.event-card h3 {
+  font-size: 1.2rem;
+  color: #007bff;
+  margin-bottom: 5px;
+}
+
+.event-card p {
+  font-size: 0.9rem;
+  color: #555;
+  margin: 5px 0;
+}
+
+/* Animations */
+@keyframes scroll {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInDown {
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
