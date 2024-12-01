@@ -103,5 +103,12 @@ app.get('/api/events', async (req, res) => {
     }
   });
 
+
+  const User = mongoose.model('User', userSchema);
+const Alumni = mongoose.model('Alumni', alumniSchema);
+const Mentorship = mongoose.model('Mentorship', mentorshipSchema);
+const Question = mongoose.model('Question', questionSchema);
+
+
 // Start the Server
 app.listen(5000, () => console.log('Server running on http://localhost:5000'));
