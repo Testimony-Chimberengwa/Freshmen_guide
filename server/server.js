@@ -70,13 +70,27 @@ app.post('/api/mentorships/rate', async (req, res) => {
     eventName: String,
     date: Date,
     location: String,
-  });
+  }); 
   
   
   
   
   const Event = mongoose.model('Event', eventSchema);
 
+
+  // Add Event (for Admin)
+app.post('/api/events', async (req, res) => {
+    try {
+      const { eventName, date, location } = req.body;
+      const newEvent = new Event({ eventName, date, location });
+      await newEvent.save();
+      res.status(201).json(newEvent);
+    } catch (error) {
+      console.error('Error creating event:', error);
+      res.status(500).send('Error creating event');
+    }
+  });
+  
 
 // Start the Server
 app.listen(5000, () => console.log('Server running on http://localhost:5000'));
