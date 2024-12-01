@@ -1,0 +1,131 @@
+.questions-page {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 100vh; /* Ensures the page uses the full height */
+  text-align: center;
+}
+
+/* Page Heading */
+h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Centered Form */
+.question-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin: 0 auto 40px;
+  max-width: 400px;
+  width: 100%;
+}
+
+.question-form textarea {
+  resize: none;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  width: 100%;
+}
+
+.question-form button {
+  padding: 10px 15px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.question-form button:hover {
+  background-color: #0056b3;
+}
+
+/* Questions List */
+.questions-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  justify-items: center;
+  width: 100%;
+}
+
+/* Individual Question Card */
+.question-card {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 15px;
+  width: 100%;
+  max-width: 300px;
+  cursor: pointer;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 1;
+}
+
+.question-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Expanded Question Card */
+.question-card.expanded {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1.1); /* Center and enlarge */
+  max-width: 500px; /* Larger width for expanded view */
+  width: 90%;
+  z-index: 10; /* Ensure it appears on top */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* More prominent shadow */
+  background-color: #fff; /* Ensure it's visually distinct */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Expanded Content Styling */
+.expanded-content {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #555;
+  text-align: left; /* Align text for readability */
+}
+
+/* Delete Button */
+.delete-btn {
+  padding: 5px 10px;
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.delete-btn:hover {
+  background-color: #b02a37;
+}
+
+/* Back Button */
+.back-btn {
+  margin-top: 20px;
+  padding: 10px 15px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.back-btn:hover {
+  background-color: #0056b3;
+}
