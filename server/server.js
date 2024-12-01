@@ -55,6 +55,27 @@ app.post('/api/mentorships/rate', async (req, res) => {
   
 
 
+  const questionSchema = new mongoose.Schema({
+    question: String,
+    answer: String,
+    answeredBy: String,
+    answeredAt: Date,
+    author: String,
+    createdAt: { type: Date, default: Date.now },
+  });
+  
+  
+  // Event Schema
+  const eventSchema = new mongoose.Schema({
+    eventName: String,
+    date: Date,
+    location: String,
+  });
+  
+  
+  
+  
+  const Event = mongoose.model('Event', eventSchema);
 
 
 // Start the Server
