@@ -77,6 +77,41 @@ app.post('/api/mentorships/rate', async (req, res) => {
   
   const Event = mongoose.model('Event', eventSchema);
 
+  // Add Event (for Admin)
+app.post('/api/events', async (req, res) => {
+    try {
+      const { eventName, date, location } = req.body;
+      const newEvent = new Event({ eventName, date, location });
+      await newEvent.save();
+      res.status(201).json(newEvent);
+    } catch (error) {
+      console.error('Error creating event:', error);
+      res.status(500).send('Error creating event');
+    }
+  });
+  
+  
+  
+  // Get Events
+  app.get('/api/events', async (req, res) => {
+    try {
+      const events = await Event.find().sort({ date: 1 }); // Sort by date
+      res.json(events);
+    } catch (error) {
+      console.error('Error fetching events:', error);
+      res.status(500).send('Error fetching events');
+    }
+  });
+  
+  const User = mongoose.model('User', userSchema);
+  const Alumni = mongoose.model('Alumni', alumniSchema);
+  const Mentorship = mongoose.model('Mentorship', mentorshipSchema);
+  const Question = mongoose.model('Question', questionSchema);
+  
+  // File Upload Configuration
+  const upload = multer({ dest: 'uploads/' });
+  
+
 
 // Start the Server
 app.listen(5000, () => console.log('Server running on http://localhost:5000'));
