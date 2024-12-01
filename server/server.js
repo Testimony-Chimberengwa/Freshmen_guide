@@ -110,5 +110,8 @@ const Mentorship = mongoose.model('Mentorship', mentorshipSchema);
 const Question = mongoose.model('Question', questionSchema);
 
 
+// File Upload Configuration
+const upload = multer({ dest: 'uploads/' });
+
 // Start the Server
 app.listen(5000, () => console.log('Server running on http://localhost:5000'));
