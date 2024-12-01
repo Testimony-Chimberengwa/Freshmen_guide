@@ -1,0 +1,180 @@
+/* General layout */
+.mentorship-page {
+    padding: 20px;
+    text-align: center;
+    background-color: #f4f7fa;
+  }
+  
+  /* Heading */
+  h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  /* Form */
+  .post-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin: 0 auto 40px;
+    max-width: 400px;
+  }
+  
+  .post-form input,
+  .post-form textarea {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  .post-form button {
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .post-form button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Post list */
+  .post-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  /* Post card styles */
+  .post-card {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 10px;
+    width: 100%;
+    max-width: 300px;
+    cursor: pointer;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .post-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+  }
+  
+  .post-card h3 {
+    margin-top: 10px;
+    font-size: 18px;
+  }
+  
+  /* Post card expanded view */
+  .post-card.expanded {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    width: 90%;
+    max-width: 600px;
+    height: auto;
+    background: white;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Post details in expanded view */
+  .post-details {
+    margin-top: 10px;
+    text-align: left;
+  }
+  
+  .post-actions {
+    margin-top: 10px;
+  }
+  
+  .post-actions button {
+    background-color: #007bff;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+  }
+  
+  .post-actions button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Back button */
+  .back-btn {
+    margin-top: 20px;
+    padding: 10px 15px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .back-btn:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Edit form overlay */
+  .edit-form-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 2000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Edit form container */
+  .edit-form-container {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    max-width: 500px;
+    width: 90%;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.3);
+    text-align: left;
+    z-index: 3000;
+  }
+  
+  .edit-form-container h2 {
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+    color: #333;
+  }
+  
+  .edit-form-container button {
+    display: block;
+    margin-top: 20px;
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .edit-form-container button:hover {
+    background-color: #0056b3;
+  }
+  
