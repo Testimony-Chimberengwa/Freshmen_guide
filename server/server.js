@@ -30,6 +30,30 @@ const mentorshipSchema = new mongoose.Schema({
   },
 });
 
+app.post('/api/mentorships/rate', async (req, res) => {
+    const { postId, rating } = req.body;
+  
+    try {
+      const post = await Mentorship.findById(postId);
+      if (!post) return res.status(404).send("Post not found");
+  
+      // Update the average rating
+      const newCount = post.ratings.count + 1;
+      const newAverage =
+        (post.ratings.average * post.ratings.count + rating) / newCount;
+  
+      post.ratings.average = newAverage;
+      post.ratings.count = newCount;
+      await post.save();
+  
+      res.status(200).json({ average: newAverage, count: newCount });
+    } catch (error) {
+      console.error('Error updating rating:', error);
+      res.status(500).send('Error updating rating');
+    }
+  });
+  
+
 
 
 
