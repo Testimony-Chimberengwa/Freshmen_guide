@@ -92,5 +92,16 @@ app.post('/api/events', async (req, res) => {
   });
   
 
+  // Get Events
+app.get('/api/events', async (req, res) => {
+    try {
+      const events = await Event.find().sort({ date: 1 }); // Sort by date
+      res.json(events);
+    } catch (error) {
+      console.error('Error fetching events:', error);
+      res.status(500).send('Error fetching events');
+    }
+  });
+
 // Start the Server
 app.listen(5000, () => console.log('Server running on http://localhost:5000'));
