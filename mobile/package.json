@@ -1,0 +1,30 @@
+{
+  "name": "firstapp",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "expo start",
+    "android": "expo start --android",
+    "ios": "expo start --ios",
+    "web": "expo start --web"
+  },
+  "dependencies": {
+    "@expo/metro-runtime": "~4.0.0",
+    "@react-navigation/native": "^7.0.9",
+    "@react-navigation/stack": "^7.0.14",
+    "expo": "~52.0.11",
+    "expo-status-bar": "~2.0.0",
+    "native-base": "^3.4.28",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "react-native": "0.76.3",
+    "react-native-image-picker": "^7.2.2",
+    "react-native-web": "~0.19.13",
+    "react-navigation": "^5.0.0",
+    "react-rating-stars-component": "^2.2.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.20.0"
+  },
+  "private": true
+}
